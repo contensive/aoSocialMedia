@@ -74,66 +74,73 @@
                     End If
                 End If
                 If Not useCache Then
-                    '
-                    tService.AuthenticateWith(_accessToken, _accessTokenSecret)
-                    tOptions.ScreenName = username
-                    tOptions.Count = count
-                    '
-                    Dim tweets As System.Collections.Generic.IEnumerable(Of TweetSharp.TwitterStatus) = tService.ListTweetsOnUserTimeline(tOptions)
-                    '
-                    If tweets Is Nothing Then
+                    Try
+                        '
+                        tService.AuthenticateWith(_accessToken, _accessTokenSecret)
+                        tOptions.ScreenName = username
+                        tOptions.Count = count
+                        '
+                        Dim tweets As System.Collections.Generic.IEnumerable(Of TweetSharp.TwitterStatus) = tService.ListTweetsOnUserTimeline(tOptions)
+                        '
+                        If tweets Is Nothing Then
+                            '
+                            ' exit with best cache we have
+                            '
+                            useCache = True
+                        Else
+                            '
+                            ' attempt to get new tweets and save new cache
+                            '
+                            hint &= ",6"
+                            hint &= ",7"
+                            If title <> "" Then
+                                returnHtml += CP.Html.h2(title, , "sidebar-title")
+                            End If
+                            '
+                            hint &= ",8"
+
+                            For Each tweet As TweetSharp.TwitterStatus In tweets
+                                hint &= ",9"
+                                tweetCopy = tweet.Text
+                                numberOfDays = CStr(dToday.Subtract(tweet.CreatedDate).Days)
+                                '
+                                hint &= ",10"
+                                If numberOfDays > 0 Then
+                                    postedString = CP.Html.p("about " & numberOfDays & " days ago", , "twitterPostedDate")
+                                End If
+                                '
+                                hint &= ",11"
+                                If tweetCopy.Contains("http") Then
+                                    linkStart = tweetCopy.IndexOf("http")
+                                    linkEnd = tweetCopy.IndexOf(" ", linkStart)
+                                    '
+                                    If linkEnd = -1 Then
+                                        linkEnd = tweetCopy.Length
+                                    End If
+                                    '
+                                    link = tweetCopy.Substring(linkStart, linkEnd - linkStart)
+                                    '
+                                    tweetCopy = tweetCopy.Replace(link, "<a target=""_blank"" href=""" & link & """>" & link & "</a>")
+                                End If
+                                '
+                                hint &= ",12"
+                                'inS += CP.Html.li(tweetCopy & CP.Html.p(tweet.CreatedDate.ToShortDateString))
+                                inS += CP.Html.li(tweetCopy & postedString)
+                            Next
+                            '
+                            hint &= ",13"
+                            returnHtml += CP.Html.ul(inS, , , "twitter_update_list")
+                            returnHtml += CP.Html.div("<a target=""_blank"" class=""twitter-link"" href=""" & CP.Request.Protocol & "twitter.com/" & username & """ id=""twitter-link"">follow " & followMeCaption & " on Twitter</a>", , , "twitter-link_div")
+                            returnHtml = CP.Html.div(returnHtml, , "twitter_div", "twitter_div")
+                            cacheTimeoutSeconds = 60 + (60 * Rnd())
+                            Call CP.Cache.Save("twitter-" & username, Date.Now.AddSeconds(cacheTimeoutSeconds) & vbCrLf & returnHtml)
+                        End If
+                    Catch ex As Exception
                         '
                         ' exit with best cache we have
                         '
                         useCache = True
-                    Else
-                        '
-                        ' attempt to get new tweets and save new cache
-                        '
-                        hint &= ",6"
-                        hint &= ",7"
-                        If title <> "" Then
-                            returnHtml += CP.Html.h2(title, , "sidebar-title")
-                        End If
-                        '
-                        hint &= ",8"
-
-                        For Each tweet As TweetSharp.TwitterStatus In tweets
-                            hint &= ",9"
-                            tweetCopy = tweet.Text
-                            numberOfDays = CStr(dToday.Subtract(tweet.CreatedDate).Days)
-                            '
-                            hint &= ",10"
-                            If numberOfDays > 0 Then
-                                postedString = CP.Html.p("about " & numberOfDays & " days ago", , "twitterPostedDate")
-                            End If
-                            '
-                            hint &= ",11"
-                            If tweetCopy.Contains("http") Then
-                                linkStart = tweetCopy.IndexOf("http")
-                                linkEnd = tweetCopy.IndexOf(" ", linkStart)
-                                '
-                                If linkEnd = -1 Then
-                                    linkEnd = tweetCopy.Length
-                                End If
-                                '
-                                link = tweetCopy.Substring(linkStart, linkEnd - linkStart)
-                                '
-                                tweetCopy = tweetCopy.Replace(link, "<a target=""_blank"" href=""" & link & """>" & link & "</a>")
-                            End If
-                            '
-                            hint &= ",12"
-                            'inS += CP.Html.li(tweetCopy & CP.Html.p(tweet.CreatedDate.ToShortDateString))
-                            inS += CP.Html.li(tweetCopy & postedString)
-                        Next
-                        '
-                        hint &= ",13"
-                        returnHtml += CP.Html.ul(inS, , , "twitter_update_list")
-                        returnHtml += CP.Html.div("<a target=""_blank"" class=""twitter-link"" href=""" & CP.Request.Protocol & "twitter.com/" & username & """ id=""twitter-link"">follow " & followMeCaption & " on Twitter</a>", , , "twitter-link_div")
-                        returnHtml = CP.Html.div(returnHtml, , "twitter_div", "twitter_div")
-                        cacheTimeoutSeconds = 60 + (60 * Rnd())
-                        Call CP.Cache.Save("twitter-" & username, Date.Now.AddSeconds(cacheTimeoutSeconds) & vbCrLf & returnHtml)
-                    End If
+                    End Try
                 End If
                 If useCache And cacheOK Then
                     returnHtml = cacheEntity
