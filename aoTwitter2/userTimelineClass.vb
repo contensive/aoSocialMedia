@@ -46,7 +46,7 @@
                 '
                 hint &= ",3"
                 If username = "" Then
-                    username = "contensivenews"
+                    username = "contensive"
                     title = "Contensive News"
                 End If
                 If title = "" Then
