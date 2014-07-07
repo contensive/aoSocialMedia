@@ -100,32 +100,38 @@
                             hint &= ",8"
 
                             For Each tweet As TweetSharp.TwitterStatus In tweets
-                                hint &= ",9"
-                                tweetCopy = tweet.Text
-                                numberOfDays = CStr(dToday.Subtract(tweet.CreatedDate).Days)
-                                '
-                                hint &= ",10"
-                                If numberOfDays > 0 Then
-                                    postedString = CP.Html.p("about " & numberOfDays & " days ago", , "twitterPostedDate")
-                                End If
-                                '
-                                hint &= ",11"
-                                If tweetCopy.Contains("http") Then
-                                    linkStart = tweetCopy.IndexOf("http")
-                                    linkEnd = tweetCopy.IndexOf(" ", linkStart)
-                                    '
-                                    If linkEnd = -1 Then
-                                        linkEnd = tweetCopy.Length
+                                hint &= ",9a"
+                                If Not (tweet Is Nothing) Then
+                                    hint &= ",9b"
+                                    If Not (tweet.Text Is Nothing) Then
+                                        hint &= ",9c"
+                                        tweetCopy = tweet.Text
+                                        numberOfDays = CStr(dToday.Subtract(tweet.CreatedDate).Days)
+                                        '
+                                        hint &= ",10"
+                                        If numberOfDays > 0 Then
+                                            postedString = CP.Html.p("about " & numberOfDays & " days ago", , "twitterPostedDate")
+                                        End If
+                                        '
+                                        hint &= ",11"
+                                        If tweetCopy.Contains("http") Then
+                                            linkStart = tweetCopy.IndexOf("http")
+                                            linkEnd = tweetCopy.IndexOf(" ", linkStart)
+                                            '
+                                            If linkEnd = -1 Then
+                                                linkEnd = tweetCopy.Length
+                                            End If
+                                            '
+                                            link = tweetCopy.Substring(linkStart, linkEnd - linkStart)
+                                            '
+                                            tweetCopy = tweetCopy.Replace(link, "<a target=""_blank"" href=""" & link & """>" & link & "</a>")
+                                        End If
+                                        '
+                                        hint &= ",12"
+                                        'inS += CP.Html.li(tweetCopy & CP.Html.p(tweet.CreatedDate.ToShortDateString))
+                                        inS += CP.Html.li(tweetCopy & postedString)
                                     End If
-                                    '
-                                    link = tweetCopy.Substring(linkStart, linkEnd - linkStart)
-                                    '
-                                    tweetCopy = tweetCopy.Replace(link, "<a target=""_blank"" href=""" & link & """>" & link & "</a>")
                                 End If
-                                '
-                                hint &= ",12"
-                                'inS += CP.Html.li(tweetCopy & CP.Html.p(tweet.CreatedDate.ToShortDateString))
-                                inS += CP.Html.li(tweetCopy & postedString)
                             Next
                             '
                             hint &= ",13"
