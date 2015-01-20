@@ -14,7 +14,7 @@
     <AssemblyName>aoTwitter2</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -30,6 +30,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,11 +67,11 @@
       <HintPath>..\..\Release\CPBase.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Hammock.ClientProfile">
-      <HintPath>..\packages\TweetSharp.2.3.1\lib\3.5\Hammock.ClientProfile.dll</HintPath>
+    <Reference Include="Hammock">
+      <HintPath>..\packages\TweetSharp-Unofficial.2.3.1.2\lib\4.0\Hammock.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\TweetSharp.2.3.1\lib\3.5\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\TweetSharp-Unofficial.2.3.1.2\lib\4.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,7 +80,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="TweetSharp">
-      <HintPath>..\packages\TweetSharp.2.3.1\lib\3.5\TweetSharp.dll</HintPath>
+      <HintPath>..\packages\TweetSharp-Unofficial.2.3.1.2\lib\4.0\TweetSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,8 +150,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)"*.dll" "C:\Program Files\kma\Contensive\Addons"
-copy $(TargetDir)"*.dll" "C:\Program Files (x86)\kma\Contensive\Addons"</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)"*.dll" "C:\Program Files (x86)\kma\Contensive\Addons"</PostBuildEvent>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
