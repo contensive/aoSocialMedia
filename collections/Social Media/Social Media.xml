@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <Collection name="Social Media" guid="{3B4362B9-5556-4890-B049-56B31B869C64}" system="No" updatable="Yes" blockNavigatorNode="No">
-	<HelpLink>http://support.contensive.com/Social-Media-Add-On</HelpLink>
+	<HelpLink>http://wiki.kmacloud.net/index.php?title=Social_Media_Collection</HelpLink>
 	<Help></Help>
 	<Addon name="Add This" guid="{DCBE4BD3-AF3C-4412-90E6-1740C391CE8E}" type="Add-on">
 		<Copy></Copy>
@@ -422,7 +422,7 @@ end function
 		<FormXML><![CDATA[<Form>
 		<Description>Open Graph Meta Tag Settings</Description>
 		<Tab name="Facebook" heading="FaceBook" description="Settings that affect Facebook">
-			<SiteProperty caption="Facebook Admins" name="facebook admin Id list" ReadOnly="0" Type="text" Selector="" Description="A comma separated list of Facebook ID numbers for the people who can administer this page. To determine your facebook Id, enter this into the browser, http://graph.facebook.com/(your facebook account name). For instance, the contensive number can be found at http://graph.facebook.com/contensive The number you need is at the top of the result, next to id:"></SiteProperty>
+			<SiteProperty caption="Facebook Admins" name="facebook admin Id list" ReadOnly="0" Type="text" Selector="" Description="A comma separated list of Facebook ID numbers for the people who can administer this page."></SiteProperty>
 		</Tab>
 		<Tab name="Open Graph" heading="Default Settings" description="Default settings for some Open Graph Tags">
 			<SiteProperty caption="Site Name" name="open graph site name" ReadOnly="0" Type="text" Selector="" Description="The human-readable name for your site that is sent out in an open graph meta tag."></SiteProperty>
