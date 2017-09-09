@@ -76,133 +76,7 @@
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="VBScript" EntryPoint="GetContent" Timeout="5000">
-			<Code><![CDATA[function getContent()
-	'
-	dim title
-	dim image
-	dim description
-	dim contentType
-	dim url
-	dim siteName
-	dim admins
-	dim cs
-	dim pageId
-	'
-	'	add on can be called from other addons this ensures it is only called once per page
-	'
-	if not cp.doc.getboolean( "Block Page Open Graph" ) then
-		pageId = cp.doc.pageId
-		set cs = cp.csNew()
-		'
-		' URL
-		'
-		url = cp.doc.var("Open Graph URL")
-		if URL="" then
-			url = cp.content.getPageLink(pageId)
-		end if
-		call cp.doc.addHeadTag("<meta property=""og:url"" content=""" & url & """ />")
-		'
-		'	title appears to be required - if not set, use the page name
-		'
-		title = cp.doc.var("Open Graph Title")
-		description = cp.doc.var("Open Graph Description")
-		if title = "" then
-			if pageId<>0 then
-				call cs.Open( "meta content", "(recordid=" & pageId & ")" )
-				if cs.ok then
-					title = cs.getText("name")
-					if title = "" then
-						title = cp.doc.pageName
-					end if
-					'
-					if description="" then
-						description = cs.getText("metadescription")
-					end if
-				end if
-				call cs.close
-			end if
-		end if
-		if title<>"" then
-			title = cp.Utils.ConvertHTML2Text(title)
-			call cp.doc.addHeadTag("<meta property=""og:title"" content=""" & title & """ />")
-		end if
-		if description<>"" then
-			description = cp.Utils.ConvertHTML2Text(description)
-			call cp.doc.addHeadTag("<meta property=""og:description"" content=""" & description & """ />")
-		end if
-		'
-		'	image is a required tag for Facebook - if not set use the Contensive logo
-		'
-		image = cp.doc.var("Open Graph Image")
-		if image = "" then
-			'
-			' no image, use page image
-			'
-			if pageId<>0 then
-				if cs.Open( "page content", "id=" & cp.doc.pageId, "imageFilename" ) then
-					image = cs.getText("imageFilename")
-					if image <> "" then
-						image = "http://" & cp.site.Domain & cp.site.filepath & image
-					end if
-				end if
-				call cs.close
-			end if
-			'
-			' no page image, use site image
-			'
-			if image = "" then
-				image = cp.site.GetProperty("pageImageFilename")
-				if image <> "" then
-					image = "http://" & cp.Site.Domain & cp.site.FilePath & cp.Utils.EncodeUrl(image)
-				end if
-			end if
-		end if
-		if image<>"" then
-			cp.Utils.EncodeHtml(image)
-			call cp.doc.addHeadTag("<meta property=""og:image"" content=""" & image & """ />")
-		end if
-		'
-		' site name
-		'
-		siteName = cp.doc.var("Open Graph Site Name")
-		if siteName="" then
-			s = cp.site.getProperty( "facebook site_name" )
-		end if
-		if siteName="" then
-			siteName = cp.site.name
-		end if
-		call cp.doc.addHeadTag("<meta property=""og:site_name"" content=""" & siteName & """ />")
-		'
-		'	if content type is not set, pull it from default default
-		'		set in Open Graph Settings
-		'
-		contentType = cp.doc.var("Open Graph Content Type")
-		if contentType = "" then
-			contentType = "website"
-		end if
-		call cp.doc.addHeadTag("<meta property=""og:type"" content=""" & contentType & """ />")
-		'
-		' facebook admins
-		'
-		admins = cp.doc.var("Open Graph Admins")
-		if admins = "" then
-			admins = cp.site.getProperty("FACEBOOK ADMIN ID LIST")
-		end if
-		if admins<>"" then
-			call cp.doc.addHeadTag("<meta property=""fb:admins"" content=""" & admins & """ />")
-		end if
-		'
-		'	only allow this addon to run once per page
-		'
-		Call cp.doc.setProperty( "Block Page Open Graph", "true" )
-	end if
-	'
-end function
-
-
-]]></Code>
-		</Scripting>
+		<Scripting Language="VBScript" EntryPoint="GetContent" Timeout="5000"/>
 	</Addon>
 	<Addon name="FaceBook Activity Feed" guid="{8FEAAEE3-EFBE-4227-9AB1-7A96744E2096}" type="Add-on">
 		<Copy></Copy>
@@ -239,24 +113,7 @@ end function
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000">
-			<Code><![CDATA[function m
-dim domain
-m=""
-domain = cp.site.domainPrimary
-if domain<>"" then
-    m = "<div" _
-		& " class=""fb-activity""" _
-		& " data-site=""" & domain & """" _
-		& " data-width=""300""" _
-		& " data-height=""300""" _
-		& " data-header=""true""" _
-		& " data-recommendations=""false"">" _
-		& "</div>"
-end if
-end function
-]]></Code>
-		</Scripting>
+		<Scripting Language="" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}" type="Add-on">
 		<Copy></Copy>
@@ -336,31 +193,7 @@ end function
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000">
-			<Code><![CDATA[function m
-dim pageId,pageLink
-m=""
-pagelink = CP.Doc.getText("Open Graph URL")
-if pagelink="" then
-	pageId = cp.doc.pageId
-	pageLink = cp.content.getPageLink( pageId )
-end if
-if pageLink="" then
-'m = "<div>?????</div>"
-else
-    m = "<div" _
-		& " class=""fb-like""" _
-		& " data-href=""" & pageLink & """" _
-		& " data-send=""true""" _
-		& " data-width=""450""" _
-		& " data-show-faces=""true""" _
-		& " data-font=""arial"">" _
-		& "</div>"
-end if
-end function
-
-]]></Code>
-		</Scripting>
+		<Scripting Language="" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="Initialize Social Media Properties At Top of Body (deprecated)" guid="{3C90FF4D-0240-4872-B379-06931FF56969}" type="Add-on">
 		<Copy></Copy>
@@ -396,15 +229,7 @@ end function
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000">
-			<Code><![CDATA[function m
-	'
-end function
-
-
-
-]]></Code>
-		</Scripting>
+		<Scripting Language="" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="Social Media Settings" guid="{C8304551-7A85-400E-8DAC-DB3832A603DE}" type="Setting">
 		<Copy></Copy>
@@ -492,6 +317,7 @@ end function
 		<Styles><![CDATA[
 
 
+
 #groupTweetForm{padding:10px;}
 #groupTweetForm .headline{font-weight:bold; font-size:14px;}
 #twitterUserTimeline{padding-top:10px; width:500px;}
@@ -543,6 +369,7 @@ Tweets to display]]></ArgumentList>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles><![CDATA[
+
 .sidebar-title{}
 .twitter-link{}
 .twitter_div{border:1px solid #000000; background-color:#FFFFFF; padding:5px;}
