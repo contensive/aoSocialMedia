@@ -18,7 +18,7 @@
 		<HelpLink></HelpLink>
 		<Icon Link="http://www.addthis.com/bookmark.php" width="0" height="0" sprites="0" />
 		<InIframe>No</InIframe>
-		<BlockEditTools>No</BlockEditTools>
+		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
 		<JavascriptOnLoad></JavascriptOnLoad>
@@ -90,7 +90,7 @@
 		<HelpLink></HelpLink>
 		<Icon Link="" width="0" height="0" sprites="0" />
 		<InIframe>No</InIframe>
-		<BlockEditTools>No</BlockEditTools>
+		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IncludeAddon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}"/>
 		<IsInline>No</IsInline>
@@ -134,7 +134,7 @@
 		<HelpLink></HelpLink>
 		<Icon Link="" width="0" height="0" sprites="0" />
 		<InIframe>No</InIframe>
-		<BlockEditTools>No</BlockEditTools>
+		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
 		<JavascriptOnLoad></JavascriptOnLoad>
@@ -170,7 +170,7 @@
 		<HelpLink></HelpLink>
 		<Icon Link="" width="0" height="0" sprites="0" />
 		<InIframe>No</InIframe>
-		<BlockEditTools>No</BlockEditTools>
+		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IncludeAddon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}"/>
 		<IsInline>No</IsInline>
