@@ -155,7 +155,7 @@
 		<ProcessInterval>0</ProcessInterval>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
-		<Styles></Styles>
+		<Styles>#facebook-jssdk-iframe, #fb-root {display: none;}</Styles>
 		<Scripting Language="" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="FaceBook Like" guid="{17919A35-06B3-4F32-9607-4DB3228A15DF}" type="Add-on">
