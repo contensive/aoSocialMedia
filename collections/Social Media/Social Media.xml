@@ -21,11 +21,12 @@
 		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>Yes</Content>
 		<Template>Yes</Template>
 		<Email>No</Email>
@@ -37,46 +38,13 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
-		<PageTitle></PageTitle>
-		<RemoteAssetLink></RemoteAssetLink>
-		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
-	</Addon>
-	<Addon name="Create Social Media Meta Tags From Properties At End Of Body" guid="{13231CF9-C06D-4748-83F4-A49545C1B4DA}" type="Add-on">
-		<Copy></Copy>
-		<CopyText></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
-		<DotNetClass></DotNetClass>
-		<ArgumentList></ArgumentList>
-		<AsAjax>No</AsAjax>
-		<Filter>No</Filter>
-		<Help></Help>
-		<HelpLink><![CDATA[http://support.contensive.com/Open-Graph-Meta-Tags]]></HelpLink>
-		<Icon Link="http://support.contensive.com/hlpRsrc/opengraph.png" width="57" height="59" sprites="4" />
-		<InIframe>No</InIframe>
-		<BlockEditTools>Yes</BlockEditTools>
-		<FormXML></FormXML>
-		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
-		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
 		<MetaDescription></MetaDescription>
 		<OtherHeadTags></OtherHeadTags>
-		<Content>No</Content>
-		<Template>No</Template>
-		<Email>No</Email>
-		<Admin>No</Admin>
-		<OnPageEndEvent>No</OnPageEndEvent>
-		<OnPageStartEvent>No</OnPageStartEvent>
-		<OnBodyStart>No</OnBodyStart>
-		<OnBodyEnd>Yes</OnBodyEnd>
-		<RemoteMethod>No</RemoteMethod>
-		<ProcessRunOnce>No</ProcessRunOnce>
-		<ProcessInterval>0</ProcessInterval>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="VBScript" EntryPoint="GetContent" Timeout="5000"/>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="FaceBook Activity Feed" guid="{8FEAAEE3-EFBE-4227-9AB1-7A96744E2096}" type="Add-on">
 		<Copy></Copy>
@@ -94,11 +62,12 @@
 		<FormXML></FormXML>
 		<IncludeAddon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}"/>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>Yes</Content>
 		<Template>Yes</Template>
 		<Email>No</Email>
@@ -110,10 +79,13 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}" type="Add-on">
 		<Copy></Copy>
@@ -137,11 +109,12 @@
 		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>No</Content>
 		<Template>No</Template>
 		<Email>No</Email>
@@ -153,10 +126,13 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
-		<Styles>#facebook-jssdk-iframe, #fb-root {display: none;}</Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
+		<Styles></Styles>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="FaceBook Like" guid="{17919A35-06B3-4F32-9607-4DB3228A15DF}" type="Add-on">
 		<Copy></Copy>
@@ -174,11 +150,12 @@
 		<FormXML></FormXML>
 		<IncludeAddon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}"/>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>Yes</Content>
 		<Template>Yes</Template>
 		<Email>No</Email>
@@ -190,10 +167,13 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="Initialize Social Media Properties At Top of Body (deprecated)" guid="{3C90FF4D-0240-4872-B379-06931FF56969}" type="Add-on">
 		<Copy></Copy>
@@ -210,11 +190,12 @@
 		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>No</Content>
 		<Template>No</Template>
 		<Email>No</Email>
@@ -226,10 +207,70 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
+	</Addon>
+	<Addon name="Open Graph" guid="{13231CF9-C06D-4748-83F4-A49545C1B4DA}" type="Add-on">
+		<Copy></Copy>
+		<CopyText></CopyText>
+		<ActiveXProgramID></ActiveXProgramID>
+		<DotNetClass></DotNetClass>
+		<ArgumentList></ArgumentList>
+		<AsAjax>No</AsAjax>
+		<Filter>No</Filter>
+		<Help></Help>
+		<HelpLink><![CDATA[http://support.contensive.com/Open-Graph-Meta-Tags]]></HelpLink>
+		<Icon Link="http://support.contensive.com/hlpRsrc/opengraph.png" width="57" height="59" sprites="4" />
+		<InIframe>No</InIframe>
+		<BlockEditTools>Yes</BlockEditTools>
+		<FormXML></FormXML>
+		<IsInline>No</IsInline>
+		<JavascriptInHead></JavascriptInHead>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
+		<Content>No</Content>
+		<Template>No</Template>
+		<Email>No</Email>
+		<Admin>No</Admin>
+		<OnPageEndEvent>No</OnPageEndEvent>
+		<OnPageStartEvent>No</OnPageStartEvent>
+		<OnBodyStart>No</OnBodyStart>
+		<OnBodyEnd>Yes</OnBodyEnd>
+		<RemoteMethod>No</RemoteMethod>
+		<ProcessRunOnce>No</ProcessRunOnce>
+		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
+		<PageTitle></PageTitle>
+		<RemoteAssetLink></RemoteAssetLink>
+		<Styles></Styles>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000">
+			<Code><![CDATA[function m
+	call addTag( "og:title", cp.doc.getText( "Open Graph Title" ))
+	call addTag( "og:type", cp.doc.getText( "Open Graph Content Type" ))
+	call addTag( "og:url", cp.doc.getText( "Open Graph URL" ))
+	call addTag( "og:image", cp.doc.getText( "Open Graph" ))
+	call addTag( "fb:admins", cp.doc.getText( "Open Graph" ))
+	call addTag( "og:site_name", cp.doc.getText( "Open Graph Site Name" ))
+	call addTag( "og:description", cp.doc.getText( "Open Graph Description" )) 
+end function
+'
+function addTag( property, content )
+	if ( content<>"" ) then
+		call CP.Doc.AddHeadTag("<meta property=""" & property & """ content=""" & property & """/>" )
+	end if
+end function
+]]></Code>
+		</Scripting>
 	</Addon>
 	<Addon name="Social Media Settings" guid="{C8304551-7A85-400E-8DAC-DB3832A603DE}" type="Setting">
 		<Copy></Copy>
@@ -260,11 +301,12 @@
 		</Tab>
 </Form>]]></FormXML>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>No</Content>
 		<Template>No</Template>
 		<Email>No</Email>
@@ -276,10 +318,13 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="Tweet Tool" guid="{3D6E0F58-73A9-4299-AAA7-4AF12DE8C7AB}" type="Tool">
 		<Copy></Copy>
@@ -296,11 +341,12 @@
 		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>Yes</Content>
 		<Template>Yes</Template>
 		<Email>No</Email>
@@ -312,9 +358,12 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles><![CDATA[
+
 
 
 
@@ -330,7 +379,8 @@
 #twitterUserTimeline .message{padding-bottom:5px;}
 #twitterUserTimeline .message A{color: #000000;}
 ]]></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Addon name="Tweets" guid="{64CFC070-A546-4ACB-85D5-F2B6935178A9}" type="Add-on">
 		<Copy></Copy>
@@ -350,11 +400,12 @@ Tweets to display]]></ArgumentList>
 		<BlockEditTools>No</BlockEditTools>
 		<FormXML></FormXML>
 		<IsInline>No</IsInline>
-		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<JavascriptBodyEnd></JavascriptBodyEnd>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
+		<javascriptForceHead>No</javascriptForceHead>
+		<JSHeadScriptSrc></JSHeadScriptSrc>
+		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
+		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
+		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
 		<Content>Yes</Content>
 		<Template>Yes</Template>
 		<Email>No</Email>
@@ -366,9 +417,12 @@ Tweets to display]]></ArgumentList>
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles><![CDATA[
+
 
 .sidebar-title{}
 .twitter-link{}
@@ -383,7 +437,8 @@ div.twitter_div a {}
 #twitter_update_list li { margin: 5px 0 15px 0; }
 #twitter_update_list li p.twitterPostedDate { margin-top: 3px; font-size: smaller; font-weight: bold }
 #twitter_div h2 { margin-top: 0; }]]></Styles>
-		<Scripting Language="" EntryPoint="" Timeout="5000"/>
+		<styleslinkhref></styleslinkhref>
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
 	<Resource name="aotwitter.dll" type="executable" path="" />
 	<Resource name="curl.exe" type="executable" path="" />
