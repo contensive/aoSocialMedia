@@ -146,16 +146,15 @@
 		<HelpLink></HelpLink>
 		<Icon Link="" width="0" height="0" sprites="0" />
 		<InIframe>No</InIframe>
-		<BlockEditTools>Yes</BlockEditTools>
+		<BlockEditTools>No</BlockEditTools>
 		<FormXML></FormXML>
 		<IncludeAddon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}"/>
 		<IsInline>No</IsInline>
+		<JavascriptOnLoad></JavascriptOnLoad>
 		<JavascriptInHead></JavascriptInHead>
-		<javascriptForceHead>No</javascriptForceHead>
-		<JSHeadScriptSrc></JSHeadScriptSrc>
-		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
-		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
-		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
+		<JavascriptBodyEnd></JavascriptBodyEnd>
+		<MetaDescription></MetaDescription>
+		<OtherHeadTags></OtherHeadTags>
 		<Content>Yes</Content>
 		<Template>Yes</Template>
 		<Email>No</Email>
@@ -167,13 +166,32 @@
 		<RemoteMethod>No</RemoteMethod>
 		<ProcessRunOnce>No</ProcessRunOnce>
 		<ProcessInterval>0</ProcessInterval>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<styleslinkhref></styleslinkhref>
-		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
+		<Scripting Language="" EntryPoint="" Timeout="5000">
+			<Code><![CDATA[function m
+dim pageId,pageLink
+m=""
+pagelink = CP.Doc.getText("Open Graph URL")
+if pagelink="" then
+	pageId = cp.doc.pageId
+	pageLink = cp.content.getPageLink( pageId )
+end if
+if pageLink<>"" then
+    m = "<div" _
+		& " class=""fb-like""" _
+		& " data-href=""" & pageLink & """" _
+		& " data-send=""true""" _
+		& " data-width=""450""" _
+		& " data-show-faces=""true""" _
+		& " data-font=""arial"">" _
+		& "</div>"
+end if
+end function
+
+]]></Code>
+		</Scripting>
 	</Addon>
 	<Addon name="Initialize Social Media Properties At Top of Body (deprecated)" guid="{3C90FF4D-0240-4872-B379-06931FF56969}" type="Add-on">
 		<Copy></Copy>

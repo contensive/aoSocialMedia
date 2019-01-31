@@ -43,6 +43,7 @@
                 End If
                 '
                 hint &= ",2"
+                CP.Doc.AddHeadTag("")
                 '
                 hint &= ",3"
                 If username = "" Then
