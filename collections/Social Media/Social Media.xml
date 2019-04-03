@@ -238,7 +238,7 @@ function m
 	call addTag( "og:title", "Open Graph Title" )
 	call addTag( "og:type", "Open Graph Content Type" )
 	call addTag( "og:url", "Open Graph URL" )
-	call addTag( "og:image", "Open Graph" )
+	call addTag( "og:image", "Open Graph Image" )
 	call addTag( "fb:admins", "Open Graph" )
 	call addTag( "og:site_name", "Open Graph Site Name" )
 	call addTag( "og:description", "Open Graph Description" ) 
