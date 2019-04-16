@@ -235,13 +235,22 @@ end function
 		<Scripting Language="VBScript" EntryPoint="" Timeout="5000">
 			<Code><![CDATA[
 function m
+	call addTag( "fb:admins", "facebook admin Id list" )
 	call addTag( "og:title", "Open Graph Title" )
 	call addTag( "og:type", "Open Graph Content Type" )
 	call addTag( "og:url", "Open Graph URL" )
-	call addTag( "og:image", "Open Graph Image" )
-	call addTag( "fb:admins", "Open Graph" )
 	call addTag( "og:site_name", "Open Graph Site Name" )
 	call addTag( "og:description", "Open Graph Description" ) 
+	dim ogImage
+	ogImage = cp.doc.getText( "Open Graph Image" )
+	if ( ogImage = "" ) then
+		ogImage = cp.site.getText( "pageImageFilename" )
+		if ( ogImage <> "" ) then
+		ogImage = cp.site.filePath & ogImage
+		end if
+	end if
+	call addTag( "og:image", "Open Graph Image" )
+	call CP.Doc.AddHeadTag("<meta property=""og:image"" content=""" & cp.utils.encodeHtml( ogImage ) & """/>" )
 end function
 '
 function addTag( ogName, key )
