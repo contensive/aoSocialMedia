@@ -434,11 +434,6 @@ div.twitter_div a {}
 		<styleslinkhref></styleslinkhref>
 		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
-	<Resource name="aotwitter.dll" type="executable" path="" />
-	<Resource name="curl.exe" type="executable" path="" />
-	<Resource name="libeay32.dll" type="executable" path="" />
-	<Resource name="libssl32.dll" type="executable" path="" />
-	<Resource name="libcurl.dll" type="executable" path="" />
 	<Resource name="aotwitter2.dll" type="executable" path="" />
 	<Resource name="hammock.clientprofile.dll" type="executable" path="" />
 	<Resource name="newtonsoft.json.dll" type="executable" path="" />
