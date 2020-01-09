@@ -32,6 +32,7 @@
 		<Template>Yes</Template>
 		<Email>No</Email>
 		<Admin>No</Admin>
+		<Category>Extras.Like and Share</Category>
 		<OnPageEndEvent>No</OnPageEndEvent>
 		<OnPageStartEvent>No</OnPageStartEvent>
 		<OnBodyStart>No</OnBodyStart>
@@ -73,6 +74,7 @@
 		<Template>Yes</Template>
 		<Email>No</Email>
 		<Admin>No</Admin>
+		<Category>Extras.Feeds/Lists</Category>
 		<OnPageEndEvent>No</OnPageEndEvent>
 		<OnPageStartEvent>No</OnPageStartEvent>
 		<OnBodyStart>No</OnBodyStart>
@@ -160,6 +162,7 @@
 		<Template>Yes</Template>
 		<Email>No</Email>
 		<Admin>No</Admin>
+		<Category>Extras.Like and Share</Category>
 		<OnPageEndEvent>No</OnPageEndEvent>
 		<OnPageStartEvent>No</OnPageStartEvent>
 		<OnBodyStart>No</OnBodyStart>
