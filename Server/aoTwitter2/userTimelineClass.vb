@@ -1,6 +1,6 @@
 ﻿Namespace Contensive.Addons.aoTwitter
     '
-    Public Class userTimelineClass
+    Public Class UserTimelineClass
         Inherits BaseClasses.AddonBaseClass
         '
         Public Overrides Function Execute(ByVal CP As BaseClasses.CPBaseClass) As Object
@@ -9,10 +9,10 @@
             '
             Try
                 Dim inS As String = ""
-                Dim username As String = CP.Doc.Var("Username")
-                Dim followMeCaption As String = CP.Doc.Var("Follow Me Caption")
-                Dim title As String = CP.Doc.Var("Title")
-                Dim count = CP.Utils.EncodeNumber(CP.Doc.Var("Tweets to display"))
+                Dim username As String = CP.Doc.GetText("Username")
+                Dim followMeCaption As String = CP.Doc.GetText("Follow Me Caption")
+                Dim title As String = CP.Doc.GetText("Title")
+                Dim count = CP.Utils.EncodeNumber(CP.Doc.GetText("Tweets to display"))
                 '
                 Dim _consumerKey As String = "rbEicL4D1H0Lc0PwL0oAw"
                 Dim _consumerSecret As String = "jKRySGRSp4Qw8bmM2Y2bHLmHEOw5tQ5JqkuCLOdg8T0"
@@ -95,7 +95,7 @@
                             hint &= ",6"
                             hint &= ",7"
                             If title <> "" Then
-                                returnHtml += CP.Html.h2(title, , "sidebar-title")
+                                returnHtml += CP.Html.h2(title, "", "sidebar-title")
                             End If
                             '
                             hint &= ",8"
@@ -111,7 +111,7 @@
                                         '
                                         hint &= ",10"
                                         If numberOfDays > 0 Then
-                                            postedString = CP.Html.p("about " & numberOfDays & " days ago", , "twitterPostedDate")
+                                            postedString = CP.Html.p("about " & numberOfDays & " days ago", "", "twitterPostedDate")
                                         End If
                                         '
                                         hint &= ",11"
@@ -136,9 +136,9 @@
                             Next
                             '
                             hint &= ",13"
-                            returnHtml += CP.Html.ul(inS, , , "twitter_update_list")
-                            returnHtml += CP.Html.div("<a target=""_blank"" class=""twitter-link"" href=""" & CP.Request.Protocol & "twitter.com/" & username & """ id=""twitter-link"">follow " & followMeCaption & " on Twitter</a>", , , "twitter-link_div")
-                            returnHtml = CP.Html.div(returnHtml, , "twitter_div", "twitter_div")
+                            returnHtml += CP.Html.ul(inS, "", "", "twitter_update_list")
+                            returnHtml += CP.Html.div("<a target=""_blank"" class=""twitter-link"" href=""" & CP.Request.Protocol & "twitter.com/" & username & """ id=""twitter-link"">follow " & followMeCaption & " on Twitter</a>", "", "", "twitter-link_div")
+                            returnHtml = CP.Html.div(returnHtml, "", "twitter_div", "twitter_div")
                             cacheTimeoutSeconds = 60 + (60 * Rnd())
                             Call CP.Cache.Save("twitter-" & username, Date.Now.AddSeconds(cacheTimeoutSeconds) & vbCrLf & returnHtml)
                         End If
