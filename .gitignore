@@ -213,3 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+Server/.vs/aoTwitter/v16/Server/sqlite3/storage.ide
+Server/.vs/aoTwitter/v16/Server/sqlite3/db.lock

@@ -5,10 +5,10 @@
 	<Addon name="Add This" guid="{DCBE4BD3-AF3C-4412-90E6-1740C391CE8E}" type="Add-on">
 		<Copy></Copy>
 		<CopyText><![CDATA[
-<!-- AddThis Button BEGIN -->
-<script type="text/javascript">addthis_pub  = 'AddThisAccount';</script>
-<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s9.addthis.com/button1-share.gif" width="125" height="16" border="0" alt="" /></a><script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
-<!-- AddThis Button END -->
+			<!-- AddThis Button BEGIN -->
+			<script type="text/javascript">addthis_pub  = 'AddThisAccount';</script>
+			<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s9.addthis.com/button1-share.gif" width="125" height="16" border="0" alt="" /></a><script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+			<!-- AddThis Button END -->
             ]]></CopyText>
 		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
@@ -93,13 +93,13 @@
 	<Addon name="Facebook Javascript SDK" guid="{F6C9FE6F-F126-4E35-850C-FD9BEDDA7E64}" type="Add-on">
 		<Copy></Copy>
 		<CopyText><![CDATA[<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>]]></CopyText>
+			<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>]]></CopyText>
 		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
 		<ArgumentList></ArgumentList>
@@ -175,26 +175,26 @@
 		<Styles></Styles>
 		<Scripting Language="" EntryPoint="" Timeout="5000">
 			<Code><![CDATA[function m
-dim pageId,pageLink
-m=""
-pagelink = CP.Doc.getText("Open Graph URL")
-if pagelink="" then
-	pageId = cp.doc.pageId
-	pageLink = cp.content.getPageLink( pageId )
-end if
-if pageLink<>"" then
-    m = "<div" _
-		& " class=""fb-like""" _
-		& " data-href=""" & pageLink & """" _
-		& " data-send=""true""" _
-		& " data-width=""450""" _
-		& " data-show-faces=""true""" _
-		& " data-font=""arial"">" _
-		& "</div>"
-end if
-end function
+		dim pageId,pageLink
+		m=""
+		pagelink = CP.Doc.getText("Open Graph URL")
+		if pagelink="" then
+			pageId = cp.doc.pageId
+			pageLink = cp.content.getPageLink( pageId )
+		end if
+		if pageLink<>"" then
+			m = "<div" _
+				& " class=""fb-like""" _
+				& " data-href=""" & pageLink & """" _
+				& " data-send=""true""" _
+				& " data-width=""450""" _
+				& " data-show-faces=""true""" _
+				& " data-font=""arial"">" _
+				& "</div>"
+		end if
+		end function
 
-]]></Code>
+		]]></Code>
 		</Scripting>
 	</Addon>
 	<Addon name="Open Graph" guid="{13231CF9-C06D-4748-83F4-A49545C1B4DA}" type="Add-on">
@@ -253,7 +253,6 @@ function m
 		end if
 	end if
 	call addTag( "og:image", "Open Graph Image" )
-	call CP.Doc.AddHeadTag("<meta property=""og:image"" content=""" & cp.utils.encodeHtml( ogImage ) & """/>" )
 end function
 '
 function addTag( ogName, key )
