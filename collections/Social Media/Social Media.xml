@@ -382,7 +382,7 @@ end function
 		<Copy></Copy>
 		<CopyText></CopyText>
 		<ActiveXProgramID></ActiveXProgramID>
-		<DotNetClass><![CDATA[Contensive.Addons.aoTwitter.userTimelineClass]]></DotNetClass>
+		<DotNetClass></DotNetClass>
 		<ArgumentList><![CDATA[Username
 Title
 Follow Me Caption
