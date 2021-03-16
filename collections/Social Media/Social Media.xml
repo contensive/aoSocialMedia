@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="windows-1252"?>
-<Collection name="Social Media" guid="{3B4362B9-5556-4890-B049-56B31B869C64}" system="No" updatable="Yes" blockNavigatorNode="No">
+<Collection name="Social Media" guid="{3B4362B9-5556-4890-B049-56B31B869C64}" system="No" updatable="Yes" blockNavigatorNode="No" onInstallAddonGuid="{820B0664-228D-4CBB-BF88-8AE1FBB15F38}">
 	<HelpLink>http://wiki.kmacloud.net/index.php?title=Social_Media_Collection</HelpLink>
 	<Help></Help>
+	<Addon name="Social Media Install" guid="{820B0664-228D-4CBB-BF88-8AE1FBB15F38}" type="Add-on">
+		<Scripting Language="VBScript" EntryPoint="" Timeout="5000">
+			<Code><![CDATA[
+		function f
+			'
+			' -- delete Tweet Tool
+			cp.db.executeNonQuery("delete from ccaggregatefunctions where ccguid='{3D6E0F58-73A9-4299-AAA7-4AF12DE8C7AB}'")
+		end function
+		]]></Code>
+		</Scripting>
+	</Addon>
 	<Addon name="Add This" guid="{DCBE4BD3-AF3C-4412-90E6-1740C391CE8E}" type="Add-on">
 		<Copy></Copy>
 		<CopyText><![CDATA[
@@ -319,62 +330,6 @@ end function
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<styleslinkhref></styleslinkhref>
-		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
-	</Addon>
-	<Addon name="Tweet Tool" guid="{3D6E0F58-73A9-4299-AAA7-4AF12DE8C7AB}" type="Tool">
-		<Copy></Copy>
-		<CopyText></CopyText>
-		<ActiveXProgramID><![CDATA[aoTwitter.groupTweetClass]]></ActiveXProgramID>
-		<DotNetClass></DotNetClass>
-		<ArgumentList></ArgumentList>
-		<AsAjax>No</AsAjax>
-		<Filter>No</Filter>
-		<Help></Help>
-		<HelpLink></HelpLink>
-		<Icon Link="" width="0" height="0" sprites="0" />
-		<InIframe>No</InIframe>
-		<BlockEditTools>Yes</BlockEditTools>
-		<FormXML></FormXML>
-		<IsInline>No</IsInline>
-		<JavascriptInHead></JavascriptInHead>
-		<javascriptForceHead>No</javascriptForceHead>
-		<JSHeadScriptSrc></JSHeadScriptSrc>
-		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
-		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
-		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
-		<Content>Yes</Content>
-		<Template>Yes</Template>
-		<Email>No</Email>
-		<Admin>Yes</Admin>
-		<OnPageEndEvent>No</OnPageEndEvent>
-		<OnPageStartEvent>No</OnPageStartEvent>
-		<OnBodyStart>No</OnBodyStart>
-		<OnBodyEnd>No</OnBodyEnd>
-		<RemoteMethod>No</RemoteMethod>
-		<ProcessRunOnce>No</ProcessRunOnce>
-		<ProcessInterval>0</ProcessInterval>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
-		<PageTitle></PageTitle>
-		<RemoteAssetLink></RemoteAssetLink>
-		<Styles><![CDATA[
-
-
-
-
-#groupTweetForm{padding:10px;}
-#groupTweetForm .headline{font-weight:bold; font-size:14px;}
-#twitterUserTimeline{padding-top:10px; width:500px;}
-#twitterUserTimeline .profileImage{padding-right:5px; padding-left:5px;}
-#twitterUserTimeline .followerMessage{padding-right:5px; padding-left:5px;}
-#twitterUserTimeline .twitter_message{padding:5px; width:100%; margin-bottom:5px; border-bottom:1px solid black;}
-#twitterUserTimeline .headline{padding-bottom:5px; font-weight:bold; font-size:14px;}
-#twitterUserTimeline .headline A{color: #000000;}
-#twitterUserTimeline .created{padding-bottom:5px;}
-#twitterUserTimeline .message{padding-bottom:5px;}
-#twitterUserTimeline .message A{color: #000000;}
-]]></Styles>
 		<styleslinkhref></styleslinkhref>
 		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
