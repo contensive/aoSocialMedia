@@ -9,6 +9,9 @@
 			'
 			' -- delete Tweet Tool
 			cp.db.executeNonQuery("delete from ccaggregatefunctions where ccguid='{3D6E0F58-73A9-4299-AAA7-4AF12DE8C7AB}'")
+			'
+			' -- delete Tweets
+			cp.db.executeNonQuery("delete from ccaggregatefunctions where ccguid='{64CFC070-A546-4ACB-85D5-F2B6935178A9}'")
 		end function
 		]]></Code>
 		</Scripting>
@@ -264,6 +267,7 @@ function m
 		end if
 	end if
 	call addTag( "og:image", "Open Graph Image" )
+	m = ""
 end function
 '
 function addTag( ogName, key )
@@ -330,64 +334,6 @@ end function
 		<PageTitle></PageTitle>
 		<RemoteAssetLink></RemoteAssetLink>
 		<Styles></Styles>
-		<styleslinkhref></styleslinkhref>
-		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
-	</Addon>
-	<Addon name="Tweets" guid="{64CFC070-A546-4ACB-85D5-F2B6935178A9}" type="Add-on">
-		<Copy></Copy>
-		<CopyText></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
-		<DotNetClass></DotNetClass>
-		<ArgumentList><![CDATA[Username
-Title
-Follow Me Caption
-Tweets to display]]></ArgumentList>
-		<AsAjax>No</AsAjax>
-		<Filter>No</Filter>
-		<Help></Help>
-		<HelpLink></HelpLink>
-		<Icon Link="" width="0" height="0" sprites="0" />
-		<InIframe>No</InIframe>
-		<BlockEditTools>No</BlockEditTools>
-		<FormXML></FormXML>
-		<IsInline>No</IsInline>
-		<JavascriptInHead></JavascriptInHead>
-		<javascriptForceHead>No</javascriptForceHead>
-		<JSHeadScriptSrc></JSHeadScriptSrc>
-		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
-		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
-		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
-		<Content>No</Content>
-		<Template>Yes</Template>
-		<Email>No</Email>
-		<Admin>No</Admin>
-		<OnPageEndEvent>No</OnPageEndEvent>
-		<OnPageStartEvent>No</OnPageStartEvent>
-		<OnBodyStart>No</OnBodyStart>
-		<OnBodyEnd>No</OnBodyEnd>
-		<RemoteMethod>No</RemoteMethod>
-		<ProcessRunOnce>No</ProcessRunOnce>
-		<ProcessInterval>0</ProcessInterval>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
-		<PageTitle></PageTitle>
-		<RemoteAssetLink></RemoteAssetLink>
-		<Styles><![CDATA[
-
-
-.sidebar-title{}
-.twitter-link{}
-.twitter_div{border:1px solid #000000; background-color:#FFFFFF; padding:5px;}
-div.twitter_div ul A{display:block; margin-top:3px; margin-bottom:3px;}
-div.twitter_div ul{margin:0px;}
-div.twitter_div {FONT-SIZE:11px;FONT-FAMILY:verdana,arial,sans-serif;}
-div.twitter_div a {}
-.twitter-link{}
-#twitter-link_div{margin-top:10px;}
-#twitter_update_list {list-style-type:none;padding:0;margin:0;}
-#twitter_update_list li { margin: 5px 0 15px 0; }
-#twitter_update_list li p.twitterPostedDate { margin-top: 3px; font-size: smaller; font-weight: bold }
-#twitter_div h2 { margin-top: 0; }]]></Styles>
 		<styleslinkhref></styleslinkhref>
 		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
