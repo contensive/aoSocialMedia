@@ -266,7 +266,12 @@ function m
 		ogImage = cp.site.filePath & ogImage
 		end if
 	end if
-	call addTag( "og:image", "Open Graph Image" )
+	call CP.Doc.AddHeadTag("<meta property=""og:image"" content=""" & ogImage & """/>" )
+	'
+	call CP.Doc.AddHeadTag("<meta property=""twitter:card"" content=""summary""/>" )
+	call addTag( "twitter:description", "Open Graph Description" )
+	call addTag( "twitter:title", "Open Graph Title" )
+	call CP.Doc.AddHeadTag("<meta property=""twitter:image"" content=""" & ogImage & """/>" )
 	m = ""
 end function
 '
