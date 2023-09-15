@@ -24,7 +24,6 @@
 			<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s9.addthis.com/button1-share.gif" width="125" height="16" border="0" alt="" /></a><script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
 			<!-- AddThis Button END -->
             ]]></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
 		<ArgumentList><![CDATA[AddThisAccount]]></ArgumentList>
 		<AsAjax>No</AsAjax>
@@ -65,7 +64,6 @@
 	<Addon name="FaceBook Activity Feed" guid="{8FEAAEE3-EFBE-4227-9AB1-7A96744E2096}" type="Add-on">
 		<Copy></Copy>
 		<CopyText></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
 		<ArgumentList></ArgumentList>
 		<AsAjax>No</AsAjax>
@@ -114,7 +112,6 @@
 			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
 			fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>]]></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
 		<ArgumentList></ArgumentList>
 		<AsAjax>No</AsAjax>
@@ -154,7 +151,6 @@
 	<Addon name="FaceBook Like" guid="{17919A35-06B3-4F32-9607-4DB3228A15DF}" type="Add-on">
 		<Copy></Copy>
 		<CopyText></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
 		<ArgumentList></ArgumentList>
 		<AsAjax>No</AsAjax>
@@ -214,7 +210,6 @@
 	<Addon name="Open Graph" guid="{13231CF9-C06D-4748-83F4-A49545C1B4DA}" type="Add-on">
 		<Copy></Copy>
 		<CopyText></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
 		<ArgumentList></ArgumentList>
 		<AsAjax>No</AsAjax>
@@ -291,7 +286,6 @@ end function
 	<Addon name="Social Media Settings" guid="{C8304551-7A85-400E-8DAC-DB3832A603DE}" type="Setting">
 		<Copy></Copy>
 		<CopyText></CopyText>
-		<ActiveXProgramID></ActiveXProgramID>
 		<DotNetClass></DotNetClass>
 		<ArgumentList></ArgumentList>
 		<AsAjax>No</AsAjax>
