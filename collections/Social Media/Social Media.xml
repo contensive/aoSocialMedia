@@ -2,7 +2,7 @@
 <Collection name="Social Media" guid="{3B4362B9-5556-4890-B049-56B31B869C64}" system="No" updatable="Yes" blockNavigatorNode="No" onInstallAddonGuid="{820B0664-228D-4CBB-BF88-8AE1FBB15F38}">
 	<HelpLink>http://wiki.kmacloud.net/index.php?title=Social_Media_Collection</HelpLink>
 	<Help></Help>
-	<Addon name="Social Media Install" guid="{820B0664-228D-4CBB-BF88-8AE1FBB15F38}" type="Add-on">
+	<Addon name="Social Media Install 2" guid="{820B0664-228D-4CBB-BF88-8AE1FBB15F38}" type="Add-on">
 		<Scripting Language="VBScript" EntryPoint="" Timeout="5000">
 			<Code><![CDATA[
 		function f
