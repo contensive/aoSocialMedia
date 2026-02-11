@@ -18,19 +18,14 @@
 	</Addon>
 	<Addon name="Add This" guid="{DCBE4BD3-AF3C-4412-90E6-1740C391CE8E}" type="Add-on">
 		<Copy></Copy>
-		<CopyText><![CDATA[
-			<!-- AddThis Button BEGIN -->
-			<script type="text/javascript">addthis_pub  = 'AddThisAccount';</script>
-			<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s9.addthis.com/button1-share.gif" width="125" height="16" border="0" alt="" /></a><script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
-			<!-- AddThis Button END -->
-            ]]></CopyText>
+		<CopyText><![CDATA[<!-- deprecated -->]]></CopyText>
 		<DotNetClass></DotNetClass>
 		<ArgumentList><![CDATA[AddThisAccount]]></ArgumentList>
 		<AsAjax>No</AsAjax>
 		<Filter>No</Filter>
 		<Help></Help>
 		<HelpLink></HelpLink>
-		<Icon Link="http://www.addthis.com/bookmark.php" width="0" height="0" sprites="0" />
+		<Icon Link="" width="0" height="0" sprites="0" />
 		<InIframe>No</InIframe>
 		<BlockEditTools>Yes</BlockEditTools>
 		<FormXML></FormXML>
@@ -207,109 +202,16 @@
 		]]></Code>
 		</Scripting>
 	</Addon>
-	<Addon name="Open Graph" guid="{13231CF9-C06D-4748-83F4-A49545C1B4DA}" type="Add-on">
-		<Copy></Copy>
-		<CopyText></CopyText>
-		<DotNetClass></DotNetClass>
-		<ArgumentList></ArgumentList>
-		<AsAjax>No</AsAjax>
-		<Filter>No</Filter>
-		<Help></Help>
-		<HelpLink><![CDATA[http://support.contensive.com/Open-Graph-Meta-Tags]]></HelpLink>
-		<Icon Link="http://support.contensive.com/hlpRsrc/opengraph.png" width="57" height="59" sprites="4" />
-		<InIframe>No</InIframe>
-		<BlockEditTools>Yes</BlockEditTools>
-		<FormXML></FormXML>
-		<IsInline>No</IsInline>
-		<JavascriptInHead></JavascriptInHead>
-		<javascriptForceHead>No</javascriptForceHead>
-		<JSHeadScriptSrc></JSHeadScriptSrc>
-		<!-- deprecated --><JSBodyScriptSrc></JSBodyScriptSrc>
-		<!-- deprecated --><JavascriptBodyEnd></JavascriptBodyEnd>
-		<!-- deprecated --><JavascriptOnLoad></JavascriptOnLoad>
-		<Content>No</Content>
-		<Template>No</Template>
-		<Email>No</Email>
-		<Admin>No</Admin>
-		<OnPageEndEvent>No</OnPageEndEvent>
-		<OnPageStartEvent>No</OnPageStartEvent>
-		<OnBodyStart>No</OnBodyStart>
-		<OnBodyEnd>Yes</OnBodyEnd>
-		<RemoteMethod>No</RemoteMethod>
-		<ProcessRunOnce>No</ProcessRunOnce>
-		<ProcessInterval>0</ProcessInterval>
-		<MetaDescription></MetaDescription>
-		<OtherHeadTags></OtherHeadTags>
-		<PageTitle></PageTitle>
-		<RemoteAssetLink></RemoteAssetLink>
-		<Styles></Styles>
-		<styleslinkhref></styleslinkhref>
-		<Scripting Language="VBScript" EntryPoint="" Timeout="5000">
-			<Code><![CDATA[
-function m
-	call addTag( "fb:admins", "facebook admin Id list" )
-	call addTag( "og:title", "Open Graph Title" )
-	call addTag( "og:type", "Open Graph Content Type" )
-	call addTag( "og:url", "Open Graph URL" )
-	call addTag( "og:site_name", "Open Graph Site Name" )
-	call addTag( "og:description", "Open Graph Description" ) 
-	dim ogImage
-	ogImage = cp.doc.getText( "Open Graph Image" )
-	if ( ogImage = "" ) then
-		ogImage = cp.site.getText( "pageImageFilename" )
-		if ( ogImage <> "" ) then
-		ogImage = cp.site.filePath & ogImage
-		end if
-	end if
-	call CP.Doc.AddHeadTag("<meta property=""og:image"" content=""" & ogImage & """/>" )
-	'
-	call CP.Doc.AddHeadTag("<meta property=""twitter:card"" content=""summary""/>" )
-	call addTag( "twitter:description", "Open Graph Description" )
-	call addTag( "twitter:title", "Open Graph Title" )
-	call CP.Doc.AddHeadTag("<meta property=""twitter:image"" content=""" & ogImage & """/>" )
-	m = ""
-end function
-'
-function addTag( ogName, key )
-    dim ogValue
-	ogValue  = cp.doc.getText( key )
-	if ( ogValue = "" ) then
-		ogValue = cp.site.getText( key )
-	end if
-	if ( ogValue <> "" ) then
-		call CP.Doc.AddHeadTag("<meta property=""" & ogName & """ content=""" & cp.utils.encodeHtml( ogValue ) & """/>" )
-	end if
-end function
-]]></Code>
-		</Scripting>
-	</Addon>
 	<Addon name="Social Media Settings" guid="{C8304551-7A85-400E-8DAC-DB3832A603DE}" type="Setting">
 		<Copy></Copy>
-		<CopyText></CopyText>
+		<CopyText><!-- deprecated --></CopyText>
 		<DotNetClass></DotNetClass>
 		<ArgumentList></ArgumentList>
 		<AsAjax>No</AsAjax>
 		<Filter>No</Filter>
-		<Help><![CDATA[<p>Settings used when creating Open Graph META tags.</p>]]></Help>
-		<HelpLink><![CDATA[http://support.contensive.com/Open-Graph-Meta-Tags]]></HelpLink>
-		<Icon Link="http://support.contensive.com/hlpRsrc/opengraphSettings.png" width="57" height="59" sprites="4" />
 		<InIframe>No</InIframe>
 		<BlockEditTools>No</BlockEditTools>
-		<FormXML><![CDATA[<Form>
-		<Description>Open Graph Meta Tag Settings</Description>
-		<Tab name="Facebook" heading="FaceBook" description="Settings that affect Facebook">
-			<SiteProperty caption="Facebook Admins" name="facebook admin Id list" ReadOnly="0" Type="text" Selector="" Description="A comma separated list of Facebook ID numbers for the people who can administer this page."></SiteProperty>
-		</Tab>
-		<Tab name="Open Graph" heading="Default Settings" description="Default settings for some Open Graph Tags">
-			<SiteProperty caption="Site Name" name="open graph site name" ReadOnly="0" Type="text" Selector="" Description="The human-readable name for your site that is sent out in an open graph meta tag."></SiteProperty>
-			<SiteProperty caption="Default Page Image" name="pageImageFilename" ReadOnly="0" Type="ImageFile" Selector="" Description="This image is used as default image for the open graph meta tags."></SiteProperty>
-		</Tab>
-		<Tab name="General Settings" description="General Settings for Twitter functionality">
-			<Description>Settings Page for Twitter functionality</Description>
-			<SiteProperty caption="Twitter Username" name="Twitter Username" Type="text"/>
-			<SiteProperty caption="Twitter Password" name="Twitter Password" Type="text"/>
-		</Tab>
-</Form>]]></FormXML>
+		<FormXML></FormXML>
 		<IsInline>No</IsInline>
 		<JavascriptInHead></JavascriptInHead>
 		<javascriptForceHead>No</javascriptForceHead>
@@ -336,8 +238,4 @@ end function
 		<styleslinkhref></styleslinkhref>
 		<Scripting Language="VBScript" EntryPoint="" Timeout="5000"/>
 	</Addon>
-	<Resource name="aotwitter2.dll" type="executable" path="" />
-	<Resource name="hammock.clientprofile.dll" type="executable" path="" />
-	<Resource name="newtonsoft.json.dll" type="executable" path="" />
-	<Resource name="tweetsharp.dll" type="executable" path="" />
 </Collection>
